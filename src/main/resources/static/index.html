@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Todo Application</h1>
+
+    <!-- Login/Register -->
+    <div id="auth-section">
+        <h2>Login / Register</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <div class="button-group">
+            <button type="button" id="login-btn">Login</button>
+            <button type="button" id="register-btn">Register</button>
+        </div>
+        <p id="auth-message"></p>
+    </div>
+
+    <!-- Todo Section -->
+    <div id="todo-section" style="display: none;">
+        <h2>Welcome, <span id="user-name"></span></h2>
+        <input type="text" id="task-input" placeholder="Enter new task">
+        <button type="button" id="add-task-btn">Add Task</button>
+        <ul id="task-list"></ul>
+        <button type="button" id="logout-btn" class="logout">Logout</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
