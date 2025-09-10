@@ -18,7 +18,10 @@ public class CorsConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         // Allow frontend origin
-        configuration.setAllowedOrigins(List.of("http://localhost:3000")); // adjust if different
+        configuration.setAllowedOrigins(List.of(
+                "http://localhost:3000",
+                "https://todo-app-production-aa39.up.railway.app"
+        ));// adjust if different
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);

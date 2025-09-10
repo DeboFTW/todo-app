@@ -48,20 +48,17 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // Allow authentication endpoints
                         .requestMatchers("/api/auth/**").permitAll()
-                        // Allow static frontend files
                         .requestMatchers(
+                                "/",
                                 "/index.html",
                                 "/style.css",
                                 "/script.js",
                                 "/favicon.ico",
                                 "/static/**"
                         ).permitAll()
-                        // Protect all other endpoints
                         .anyRequest().authenticated()
                 );
-
         // Add JWT filter before UsernamePasswordAuthenticationFilter
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 
